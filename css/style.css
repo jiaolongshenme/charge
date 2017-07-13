@@ -1,0 +1,89 @@
+
+body {
+  font-family: "Open Sans", Arial;
+}
+
+header {
+  background-color: #2cc185;
+  color: #fff;
+  padding: 2em 1em;
+  margin-bottom: 1.5em;
+}
+
+h1 {
+  font-weight: 300;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+}
+
+button {
+  background-color: #2cc185;
+  color: #fff;
+  border: 0;
+  padding: 1em 1.5em;
+}
+
+button:hover {
+  background-color: #239768;
+  color: #fff;
+}
+
+button:focus {
+  background-color: #239768;
+  color: #fff;
+}
+
+.accordion {
+  position: relative;
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #f1f4f3;
+  color: #74777b;
+  vertical-align: middle;
+}
+
+.accordion .fa {
+  position: relative;
+  float: right;
+}
+
+.accordion h4 {
+  position: relative;
+  /*top: 0.8em;*/
+  margin: 0;
+  font-size: 14px;
+}
+
+.accordion a {
+  position: relative;
+  display: block;
+  color: #74777b;
+  padding: 1em 1em 1em 1em;
+  text-decoration: none;
+}
+
+.accordion a:hover {
+  text-decoration: none;
+  color: #2cc185;
+  transition: 0.3s;
+}
+
+.accordion-desc {
+  background-color: #f7f7f7;
+  color: #333333;
+  z-index: 2;
+  padding: 20px 15px;
+}
+ @media (min-width:480px) {
+
+.container { max-width: 80%; }
+}
+ @media (min-width:768px) {
+
+.container { max-width: 600px; }
+}

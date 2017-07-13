@@ -1,0 +1,255 @@
+body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,hr{margin:0;padding:0}
+body,button,input,select,textarea{ font:12px/1.5 "宋体",arial, verdana, sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+li{list-style:none}
+fieldset,img{border:0}
+table{border-collapse:collapse;border-spacing:0}
+q:before,q:after{content:''}
+button,input,select,textarea{font-size:100%}
+legend{color:#000}
+small{font-size:12px}
+hr{border:none;height:1px}
+a{text-decoration:none}
+a:hover{text-decoration:none}
+.cle:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.cle{ display:inline-block}
+.cle{ display:block}
+.clear {clear: both;}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?t3apa1');
+    src:  url('../fonts/icomoon.eot?t3apa1#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?t3apa1') format('truetype'),
+    url('../fonts/icomoon.woff?t3apa1') format('woff'),
+    url('../fonts/icomoon.svg?t3apa1#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-second:before {
+    content: "\e900";
+}
+.icon-first:before {
+    content: "\e901";
+}
+.icon-third:before {
+    content: "\e902";
+}
+
+/*侧边栏*/
+.sidenav .sidenav-avatar {
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+    margin-top: 80px;
+    font-size: 14px;
+}
+.sidenav-avatar p {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.img-wrapper {
+    width:100px;
+    height: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 1px solid #dddddd;
+    margin: 0 auto;
+    box-shadow: 2px 2px 8px #cccccc;
+}
+.inner-img {
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.inner-img img{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.sidenav-lists {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidenav-lists li {
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #dddddd;
+    padding-left: 60px;
+}
+.sidenav-lists li  a{
+    text-decoration: none;
+    color: #333333;
+    display: block;
+}
+.message {
+    background:url(../img/message.png) no-repeat 18px center;
+    background-size: 30px 30px;
+}
+.money {
+    background:url(../img/money.png) no-repeat 18px center;
+    background-size: 26px 26px;
+}
+.about {
+    background:url(../img/about.png) no-repeat 18px center;
+    background-size: 30px 30px;
+}
+.help {
+    background:url(../img/help.png) no-repeat 18px center;
+    background-size: 26px 26px;
+}
+
+
+/*头部*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 0px 5px #dddddd;
+    background-color: #ffffff;
+}
+.tab-wrapper {
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 8px;
+}
+.tab {
+    height: 36px;
+    line-height: 36px;
+    background: #eeeeee;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+}
+.tab a{
+    display: block;
+    width: 33.3333%;
+    float: left;
+    margin: auto;
+    height: 36px;
+    text-align: center;
+
+}
+.tab a span {
+    font-size: 30px;
+    line-height: 36px;
+    color: #cccccc;
+}
+.on {
+    background: #ffffff;
+    border-radius:20px;
+    box-shadow: 0px 0px 6px #dddddd;
+}
+.tab .on  span {
+    color:#26c541;
+}
+.content .tex {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    height: 26px;
+    overflow:hidden;
+    line-height:26px;
+    text-align: center;
+    color: #666666;
+}
+.toggle {
+    position: absolute;
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    width: 70px;
+}
+.search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    width: 70px;
+}
+.search img {
+    width: 28px;
+    padding: 16px;
+}
+.toggle img{
+    width: 24px;
+    padding: 14px;
+}
+.sidenav-overlay {
+    background-color: #191919;
+    opacity: 0.4;
+}
+
+
+/*底部按钮*/
+.button {
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: 90%;
+    margin: 10px 5% 5px 5%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #26c541 ;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size:16px;
+}
+.biaoji {
+    position: absolute;
+    bottom: 50%;
+    left: calc(50% - 80px);
+    margin: 0 auto;
+    width: 160px;
+    height: 70px;
+    background: url("../img/biaoji.png") center 14px no-repeat;
+    background-size: 32px;
+}
+.biaoji .text-biaoji {
+    width: 160px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 0 8px #bbbbbb;
+
+}
+.biaoji .text-biaoji .text {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 154px;
+    height: 34px;
+    background-color: #26c541;
+    border-radius: 25px;
+    font-size:14px;
+    line-height: 34px;
+    text-align: center;
+    color: #ffffff;
+}

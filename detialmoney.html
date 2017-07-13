@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <link href="css/common.css" type="text/css"  rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body style="background-color: #f7f7f7">
+<header class="header">
+    <a  class="back" onclick="javascript:history.back(-1);" >
+        <img src="img/back.png">
+    </a>
+    <div class="tab-wrapper ">
+        <div class="tab">
+            <a class="on"><span aria-hidden="true" class="text-tab">全部</span></a>
+            <a ><span aria-hidden="true" class="text-tab">支出</span></a>
+            <a ><span aria-hidden="true" class="text-tab">收入</span></a>
+        </div>
+    </div>
+</header>
+<div class="content tab-list">
+    <ul id="item">
+        <li style="display:block;" class="list-change">
+            <ul>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+            </ul>
+        </li>
+        <li style="display:none;" class="list-change">
+            <ul>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+                <li class="money-list">2017-16-08<p>+18.00</p></li>
+            </ul>
+        </li>
+        <li style="display:none;"  class="list-change">
+            <ul>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+                <li class="money-list">2017-16-08<p>-18.00</p></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="js/sidenav.min.js"></script>
+<script>$('[data-sidenav]').sidenav();</script>
+<script>
+    $(function(){
+        $(".tab-wrapper .tab a").click(function(){
+            $(this).addClass('on').siblings().removeClass('on');
+            var index = $(this).index();
+            number = index;
+            $('.content ul .list-change').hide();
+            $('.content ul .list-change:eq('+index+')').show();
+        });
+
+        var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+        if(auto ==1){
+            var number = 0;
+            var maxNumber = $('.zzsc .tab a').length;
+            function autotab(){
+                number++;
+                number == maxNumber? number = 0 : number;
+                $('.zzsc .tab a:eq('+number+')').addClass('on').siblings().removeClass('on');
+                $('.zzsc .content ul li:eq('+number+')').show().siblings().hide();
+            }
+            var tabChange = setInterval(autotab,3000);
+            //鼠标悬停暂停切换
+            $('.zzsc').mouseover(function(){
+                clearInterval(tabChange);
+            });
+            $('.zzsc').mouseout(function(){
+                tabChange = setInterval(autotab,3000);
+            });
+        }
+    });
+</script>
+</html>

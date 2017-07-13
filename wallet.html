@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/common.css" type="text/css"  rel="stylesheet">
+</head>
+<body style="background-color: #f7f7f7">
+<div class="header">
+    <div class="back" onclick="javascript:history.back(-1);">
+        <span></span>
+    </div>
+    我的钱包
+</div>
+<div class="content">
+    <div class="bg-img">
+        <!--<img src="./img/img3.png">-->
+        <div class="wallet-money">
+            <h2>钱包余额</h2>
+            <p>0<span>元</span></p>
+        </div>
+    </div>
+    <div class="addmoney">
+        暂不支持充值
+    </div>
+</div>
+<div class="cash" onclick="window.location='addmoney.html'">
+    押金
+    <p class="cash-note">0元</p>
+
+    <span class="next"></span>
+</div>
+<div class="money-detail" onclick="window.location='detialmoney.html'">
+    余额明细
+    <span class="next"></span>
+</div>
+</body>
+</html>

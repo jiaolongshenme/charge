@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/sidenav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <!--<linK rel="stylesheet" href="css/bootstrap.min.css" type="text/css">-->
+    <style type="text/css">
+        body,html,#container{
+            height: 100%;
+            margin: 0px;
+
+        }
+    </style>
+</head>
+<body style="background-color: #eeeeee">
+<div id="container" tabindex="0"></div>
+    <nav class="sidenav" data-sidenav data-sidenav-toggle="#sidenav-toggle">
+        <div class="sidenav-avatar">
+            <div class="img-wrapper">
+                <div class="inner-img">
+                    <img src="./img/avatar.jpg ">
+                </div>
+            </div>
+            <p>我是用户</p>
+        </div>
+        <ul class="sidenav-lists">
+            <li class="message" >消息</li>
+            <li class="money" onclick="window.location='wallet.html'">我的钱包</li>
+            <li class="help" onclick="window.location='help.html'">帮助</li>
+            <li class="about"><a href="">关于</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <a href="javascript:;" class="toggle" id="sidenav-toggle">
+            <img src="img/mine.png">
+        </a>
+        <a href="list.html" class="search" >
+            <img src="img/search.png">
+        </a>
+        <div class="tab-wrapper">
+            <div class="tab">
+                <a class="on"><span aria-hidden="true" class="icon-first"></span></a>
+                <a ><span aria-hidden="true" class="icon-second"></span></a>
+                <a ><span aria-hidden="true" class="icon-third"></span></a>
+            </div>
+            <div class="content">
+                <ul class="tex">
+                    <li style="display:block;">扫码充电和租借充电宝</li>
+                    <li>扫码充电</li>
+                    <li>租借充电宝</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div type="button" class="button" onclick="window.location='select.html'">
+        立即充电
+    </div>
+    <div class="biaoji">
+        <div class="text-biaoji">
+            <div class="text">附近无可充电商户</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=3335541bac5c40dee8394699b1ff88d9"></script>
+    <script type="text/javascript">
+        var map = new AMap.Map('container',{
+            resizeEnable: true,
+            zoom: 10,
+            center: [116.480983, 40.0958]
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="js/sidenav.min.js"></script>
+    <script>$('[data-sidenav]').sidenav();</script>
+    <script>
+        $(function(){
+            $(".tab-wrapper .tab a").click(function(){
+                $(this).addClass('on').siblings().removeClass('on');
+                var index = $(this).index();
+                number = index;
+                $('.tab-wrapper .content li').hide();
+                $('.tab-wrapper .content li:eq('+index+')').show();
+            });
+
+            var auto = 1;  //等于1则自动切换，其他任意数字则不自动切换
+            if(auto ==1){
+                var number = 0;
+                var maxNumber = $('.zzsc .tab a').length;
+                function autotab(){
+                    number++;
+                    number == maxNumber? number = 0 : number;
+                    $('.zzsc .tab a:eq('+number+')').addClass('on').siblings().removeClass('on');
+                    $('.zzsc .content ul li:eq('+number+')').show().siblings().hide();
+                }
+                var tabChange = setInterval(autotab,3000);
+                //鼠标悬停暂停切换
+                $('.zzsc').mouseover(function(){
+                    clearInterval(tabChange);
+                });
+                $('.zzsc').mouseout(function(){
+                    tabChange = setInterval(autotab,3000);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

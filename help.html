@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/common.css" type="text/css"  rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+<div class="header">
+    <div class="back" onclick="javascript:history.back(-1);">
+        <span></span>
+    </div>
+    帮助
+</div>
+<div class="service">
+    <div class="button-service" id="show">联系客服</div>
+</div>
+<p class="help-title">常见问题</p>
+<div class="help-content">
+    <div class="floor">
+        <div class="list-side">
+            <div class="con">
+                <i class="icon-second"></i>
+                <p>扫码充电</p>
+            </div>
+        </div>
+        <div class="list-main">
+            <div class="accordion-container">
+                <div class="container">
+                    <div class="accordion"> <a href="#">
+                        <h4>1.小电充电是否安全</h4>
+                        <i class="fa fa-plus-circle"></i></a></div>
+                    <div class="accordion-desc">
+                        <p> 桌面式座充设备和移动充电宝的充电线只能传输电力，不支持数据传输，无法获取任何手机信息。100%安全</p>
+                    </div>
+                    <div class="accordion"> <a href="#">
+                        <h4>2.小电充电是否安全</h4>
+                        <i class="fa fa-plus-circle"></i></a> </div>
+                    <div class="accordion-desc">
+                        <p>桌面式座充设备和移动充电宝的充电线只能传输电力，不支持数据传输，无法获取任何手机信息。100%安全</p>
+                    </div>
+                    <div class="accordion"> <a href="#">
+                        <h4>3.小电充电是否安全</h4>
+                        <i class="fa fa-plus-circle"></i></a> </div>
+                    <div class="accordion-desc">
+                        <p>桌面式座充设备和移动充电宝的充电线只能传输电力，不支持数据传输，无法获取任何手机信息。100%安全</p>
+                    </div>
+                </div>
+                <!-- end of container -->
+            </div>
+        </div>
+    </div>
+    <div class="floor">
+        <div class="list-side">
+            <div class="con">
+                <i class="icon-third"></i>
+                <p>租借充电宝</p>
+            </div>
+        </div>
+        <div class="list-main">
+            <div class="accordion-container">
+                <div class="container">
+                    <div class="accordion"> <a href="#">
+                        <h4>1.小电充电是否安全</h4>
+                        <i class="fa fa-plus-circle"></i></a></div>
+                    <div class="accordion-desc">
+                        <p> 桌面式座充设备和移动充电宝的充电线只能传输电力，不支持数据传输，无法获取任何手机信息。100%安全</p>
+                    </div>
+                    <div class="accordion"> <a href="#">
+                        <h4>2.小电充电是否安全</h4>
+                        <i class="fa fa-plus-circle"></i></a> </div>
+                    <div class="accordion-desc">
+                        <p>桌面式座充设备和移动充电宝的充电线只能传输电力，不支持数据传输，无法获取任何手机信息。100%安全</p>
+                    </div>
+                    <div class="accordion"> <a href="#">
+                        <h4>3.小电充电是否安全</h4>
+                        <i class="fa fa-plus-circle"></i></a> </div>
+                    <div class="accordion-desc">
+                        <p>桌面式座充设备和移动充电宝的充电线只能传输电力，不支持数据传输，无法获取任何手机信息。100%安全</p>
+                    </div>
+                </div>
+                <!-- end of container -->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".accordion-desc").fadeOut(0);
+        $(".accordion").click(function() {
+            $(".accordion-desc").not($(this).next()).slideUp('fast');
+            $(this).next().slideToggle(400);
+        });
+    });
+</script>
+<script>
+    $("document").ready(function()
+    {
+        //点击弹出浮层
+        $("#show").click(function()
+        {
+            //清除之前的样式
+            $("#fullScreen,#floatLayer").remove();
+            $("body").append
+            (
+                //占据整个屏幕Div
+                "<div id='fullScreen'></div>"+
+                //浮层区
+                "<div id='floatLayer'>" +
+                "<a href='tel:13764567708' id='phoneon'>拨打号码</a>"+
+                "<a href='wtai://wp/ap;13764567708;' id='phonesave'>保存至通讯录</a>"+
+                "</div>"
+            );
+            //隐藏浮层
+            $("#fullScreen").click(function()
+            {
+                $("#fullScreen,#floatLayer").remove();
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>店铺列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link href="css/common.css" type="text/css"  rel="stylesheet">
+    <link href="css/demo.css" type="text/css"  rel="stylesheet">
+</head>
+<body style="background-color: #f7f7f7">
+<div class="screening">
+    <div class="top">
+        <div class="back" onclick="javascript:history.back(-1);">
+            <span></span>
+        </div>
+        <div class="input">
+            <input class="text" type="text" placeholder="搜索店铺,品类">
+            <input class="submit" type="submit" value="搜索">
+        </div>
+    </div>
+        <!-- screening -->
+    <ul>
+        <li class="Sort">全部</li>
+        <li class="Regional">全部</li>
+    </ul>
+</div>
+<div class="Sort-eject Sort-height">
+    <ul class="Sort-Sort" id="Sort-Sort">
+        <li onclick="Sorts(this)">全部</li>
+        <li onclick="Sorts(this)">座充</li>
+        <li onclick="Sorts(this)">充电宝</li>
+    </ul>
+</div>
+<div class="grade-eject">
+    <ul class="grade-w" id="gradew">
+        <li onclick="grade1(this)">全部</li>
+        <li onclick="grade1(this)">美食 </li>
+        <li onclick="grade1(this)">K歌 </li>
+        <li onclick="grade1(this)">购物</li>
+        <li onclick="grade1(this)">电影 </li>
+        <li onclick="grade1(this)">休闲娱乐</li>
+        <li onclick="grade1(this)">周边娱乐</li>
+        <li onclick="grade1(this)">运动健身</li>
+        <li onclick="grade1(this)">丽人 </li>
+        <li onclick="grade1(this)">酒店 </li>
+        <li onclick="grade1(this)">上海 </li>
+        <li onclick="grade1(this)">江苏 </li>
+        <li onclick="grade1(this)">山东 </li>
+        <li onclick="grade1(this)">河南 </li>
+        <li onclick="grade1(this)">湖北 </li>
+        <li onclick="grade1(this)">湖南 </li>
+        <li onclick="grade1(this)">广东 </li>
+        <li onclick="grade1(this)">广西 </li>
+        <li onclick="grade1(this)">海南 </li>
+    </ul>
+    <ul class="grade-t" id="gradet">
+        <li onclick="gradet(this)">全河北 </li>
+        <li onclick="gradet(this)">石家庄 </li>
+        <li onclick="gradet(this)">唐山 </li>
+        <li onclick="gradet(this)">秦皇岛 </li>
+        <li onclick="gradet(this)">邢台 </li>
+        <li onclick="gradet(this)">保定 </li>
+        <li onclick="gradet(this)">张家口 </li>
+        <li onclick="gradet(this)">承德 </li>
+        <li onclick="gradet(this)">沧州 </li>
+        <li onclick="gradet(this)">廊坊 </li>
+        <li onclick="gradet(this)">衡水 </li>
+    </ul>
+
+</div>
+<ul class="listBox">
+    <li class="item"  onclick="window.location='list-detial.html'">
+        <div class="img-wrapper"><img src="./img/avatar.jpg"> </div>
+        <div class="content-wrapper">
+            <h2>鸟巢</h2>
+            <p>116米|<span>西单老佛爷百货五层</span></p>
+            <p class="list-note">提供座充</p>
+        </div>
+    </li>
+    <li class="item">
+        <div class="img-wrapper"><img src="./img/avatar.jpg"> </div>
+        <div class="content-wrapper">
+            <h2>鸟巢</h2>
+            <p>116米|<span>西单老佛爷百货五层</span></p>
+            <p class="list-note">提供座充</p>
+        </div>
+    </li>
+    <li class="item">
+        <div class="img-wrapper"><img src="./img/avatar.jpg"> </div>
+        <div class="content-wrapper">
+            <h2>鸟巢</h2>
+            <p>116米|<span>西单老佛爷百货五层</span></p>
+            <p class="list-note">提供座充</p>
+        </div>
+    </li>
+    <li class="item">
+        <div class="img-wrapper"><img src="./img/avatar.jpg"> </div>
+        <div class="content-wrapper">
+            <h2>鸟巢</h2>
+            <p>116米|<span>西单老佛爷百货五层</span></p>
+            <p class="list-note">提供座充</p>
+        </div>
+    </li>
+</ul>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="./js/demo.js" type="text/javascript"></script>
+
+</html>

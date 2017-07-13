@@ -298,6 +298,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 16px;
     border: none;
     padding: 8px;
+    background: #ffffff;
+    outline: none;
 }
 .listBox {
     margin: 116px 16px 16px 16px;

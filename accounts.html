@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
     <link href="css/main.css" type="text/css" rel="stylesheet">
 </head>
-<body style="background-color: #f7f7f7" onload="time_fun()">
+<body style="background-color: #f7f7f7" onload="showvalf()">
 <div class="header">
     <div class="back" onclick="javascript:history.back(-1);">
         <span></span>
@@ -19,10 +19,23 @@
         <h2 class="accounts-title">本次充电消费</h2>
         <div class="right"></div>
     </div>
-    <h1 id="mytime"><span>¥</span>0</h1>
-    <P class="time-accounts">累计充电时间：23分钟</P>
+    <h1 id="mytime"><span id="time2">¥</span><span id="time1">0</span></h1>
+    <P class="time-accounts">累计充电时间：<span id="times">23</span>分钟</P>
     <p class="time-bottom">关闭后,请重置密码</p>
 </div>
-<div class="time-button">确认支付</div>
+<div class="time-button" >确认支付</div>
 </body>
+<script type="text/javascript" >
+    var thisURL = document.URL;
+    var getval =thisURL.split('?')[1];
+    var showval= getval.split("=")[1];
+    function  showvalf(){
+        document.getElementById('times').innerText= showval;
+        if(showval > 0 && showval <= 20) {
+            document.getElementById('time1').innerText= 1;
+        }else {
+            document.getElementById('time1').innerText= showval/20;
+        }
+    }
+</script>
 </html>

@@ -16,11 +16,12 @@
 <div class="content">
     <h2 class="time-title">充电时间</h2>
     <h1 id="mytime">00:00:00</h1>
-    <P class="time-accounts">当前费用：0.00元</P>
+    <P class="time-accounts" >当前费用：<span id="timer">0</span>.00元</P>
     <p class="time-bottom">关闭后,请重置密码</p>
 </div>
-<div class="time-button" onclick="window.location='accounts.html'">结束充电</div>
+<div class="time-button" onclick="to()">结束充电</div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
     function two_char(n) {
         return n >= 10 ? n : "0" + n;
@@ -32,8 +33,23 @@
             var date = new Date(0, 0);
             date.setSeconds(sec);
             var h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
-            document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
+            var money = parseInt(h*3)+parseInt(m/20);
+                document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
+            if(m%20){
+                document.getElementById("timer").innerText = (money+1);
+            }else{
+                document.getElementById("timer").innerText = money;
+            }
         }, 1000);
     }
+    function to(){
+        var  Str = document.getElementById("mytime").innerText;
+        var  Temp = Str.split(':');
+        var  Minute = 60* Number(Temp[0]) + Number(Temp[1]);
+        document.location = "accounts.html?time=" + Minute;
+    }
+</script>
+<script>
+
 </script>
 </html>

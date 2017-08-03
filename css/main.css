@@ -143,7 +143,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     width: 25%;
     background: #ececec;
     height: 54px;
-    border: 2px solid #ececec;
+    border: none;
     color: #bab6ab;
     font-size: 18px;
     font-weight: normal;
@@ -261,9 +261,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     background: #dddddd;
     margin: auto;
 }
-#mytime span{
-    font-size:18px;
-    font-weight: normal;
+#mytime #time1 {
+    font-size: 44px;
+}
+#time2 {
+    font-size: 16px;
 }
 
 
@@ -770,18 +772,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     top: 0;
     opacity: 0.4;
     background-color: black;
-    z-index: 9999;
+    z-index: 100000;
 }
 /*浮层,可随意设置大小宽高，但是z-index必须比上面fullScreen大才能显示出来*/
 #floatLayer
 {
     position: fixed;
-    width: 180px;
+    width: 80%;
     height: 100px;
-    left: calc(50% - 90px);
+    left: 10%;
     top: 40%;
     background-color: white;
-    z-index: 10000;
+    z-index: 2000000;
     border-radius: 3px;
     overflow: hidden;
 }
@@ -801,4 +803,67 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-size: 16px;
     line-height: 50px;
     text-decoration: none;
+}
+#errormsg {
+    position: absolute;
+    top: 52%;
+    height: 36px;
+    width: 60%;
+    margin-left: 20%;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 4px;
+    text-align: center;
+    line-height: 36px;
+    color: #ffffff;
+}
+.errorTitle {
+    line-height: 50px;
+    text-align: center;
+}
+#dismiss {
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    color: #26c541;
+    border-top: 1px solid #dddddd;
+}
+
+.con {
+    margin-top: 50px;
+}
+.con-money {
+    margin-left: 24px;
+    margin-right: 24px;
+    font-size: 16px;
+    color: #26c541;
+}
+.con-money .left {
+    width:46%;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #26c541;
+    border-radius: 8px;
+    margin-right: 2%;
+    margin-top: 20px;
+}
+.con-money .right {
+    width:48%;
+    float: left;
+    height: 50px;
+    margin-left: 2%;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #26c541;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.btn-money {
+    top: 210px;
+    bottom: auto;
+}
+.select {
+    background-color: #26c541;
+    color: #ffffff;
 }

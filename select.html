@@ -19,14 +19,63 @@
     </div>
     <div class="content">
         <img src="img/img1.png">
-        <div class="note"><p>计费说明:1元/小时</p></div>
-        <form class="num-wrapper" action="password.html" method="get">
-            <input class="num-input" type="text" placeholder="请输入充电器编码">
-            <input class="num-submit" type="submit" value="确定" >
-        </form>
+        <div class="note"><p>计费说明:1元/20分钟</p></div>
+        <div class="num-wrapper">
+            <input class="num-input" type="number" placeholder="请输入充电器编码" value="" >
+            <input class="num-submit " type="submit" value="确定" disabled >
+        </div>
         <P class="title">输入电池编号，获取解锁码</P>
     </div>
 </div>
+<div id="errormsg" style="display: none"></div>
 
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var inputValue = "";
+        $(".num-input").on("input",function(){
+            inputValue = $(this).val();
+            if($(this).val()){
+                $(".num-submit").removeAttr("disabled");
+                $(".num-submit").css("background-color","#26c541");
+                $(".num-submit").css("color","#fff");
+                $(".title").text("电池编码一般为4-6位数字");
+            }else{
+                $(".num-submit").prop("disabled","disabled");
+                $(".num-submit").css("background-color","");
+                $(".num-submit").css("color","");
+                $(".title").text("输入电池编号，获取解锁码");
+            }
+        });
+        $(".num-submit").click(function(){
+            if(inputValue =="111111"){
+                window.location.href="password.html";
+            }else if(inputValue.trim().length < 4){
+                $("#errormsg").css({"display":"block"});
+                $("#errormsg").html("请输入正确号码").fadeIn(300).delay(2000).fadeOut(300);
+            }else {
+                //清除之前的样式
+                $("#fullScreen,#floatLayer").remove();
+                $("body").append
+                (
+                    //占据整个屏幕Div
+                    "<div id='fullScreen'></div>"+
+                    //浮层区
+                    "<div id='floatLayer'>" +
+                    "<p class='errorTitle'>该电池编号不存在</p>"+
+                    "<span id='dismiss'>我知道了</span>"+
+                    "</div>"
+                );
+                //隐藏浮层
+                $("#fullScreen,#dismiss").click(function()
+                {
+                    $("#fullScreen,#floatLayer").remove();
+                });
+            }
+        });
+    });
+
+
+</script>
 </html>

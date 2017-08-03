@@ -524,11 +524,11 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .addmoney {
     height: 40px;
     margin: 20px 50px 20px 50px;
-    background-color: #dddddd;
+    background-color: #26c541;
     border-radius: 22px;
     font-size: 16px;
     line-height: 40px;
-    color: #999999;
+    color: #fff;
 }
 .cash {
     font-size: 16px;

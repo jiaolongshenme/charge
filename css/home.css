@@ -213,7 +213,7 @@ a:hover{text-decoration:none}
 /*底部按钮*/
 .button {
     position: fixed;
-    left: calc(45% - 40px);
+    left: calc(45% - 44px);
     bottom: 10px;
     width: 80px;
     height: 80px;

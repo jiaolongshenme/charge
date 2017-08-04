@@ -23,19 +23,54 @@
     <P class="time-accounts">累计充电时间：<span id="times">23</span>分钟</P>
     <p class="time-bottom">关闭后,请重置密码</p>
 </div>
-<div class="time-button" >确认支付</div>
+<div class="time-button" id="show">确认支付</div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
 <script type="text/javascript" >
     var thisURL = document.URL;
     var getval =thisURL.split('?')[1];
     var showval= getval.split("=")[1];
     function  showvalf(){
-        document.getElementById('times').innerText= showval;
-        if(showval > 0 && showval <= 20) {
+        if(showval==0){
+            document.getElementById('times').innerText= 1;
+        }else {
+            document.getElementById('times').innerText= showval;
+        }
+        if(showval >= 0 && showval <= 20) {
             document.getElementById('time1').innerText= 1;
         }else {
             document.getElementById('time1').innerText= showval/20;
         }
     }
+</script>
+<script>
+    $("document").ready(function()
+    {
+        //点击弹出浮层
+        $("#show").click(function()
+        {
+            var money = $("#time1").text();
+            var newMoney = parseInt($.cookie("COOKIE_MONEY"))-parseInt(money);
+            $.cookie("COOKIE_MONEY", newMoney, { path: '/', expires: 10 });
+            //清除之前的样式
+            $("#fullScreen,#floatLayer").remove();
+            $("body").append
+            (
+                //占据整个屏幕Div
+                "<div id='fullScreen'></div>"+
+                //浮层区
+                "<div id='floatLayer'>" +
+                "<p id='mainText' >你已成功支付"+money+"元!钱包余额"+newMoney+"元</p>"+
+                "<a id='confirm' href='index.html'>确认</a>"+
+                "</div>"
+            );
+            //隐藏浮层
+            $("#confirm").click(function()
+            {
+                $("#fullScreen,#floatLayer").remove();
+            });
+        });
+    });
 </script>
 </html>

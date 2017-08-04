@@ -18,7 +18,7 @@
         <!--<img src="./img/img3.png">-->
         <div class="wallet-money">
             <h2>钱包余额</h2>
-            <p>0<span>元</span></p>
+            <p><span id="mian-money">0</span><span>元</span></p>
         </div>
     </div>
     <div class="addmoney" onclick="window.location='deposit.html'">
@@ -36,4 +36,11 @@
     <span class="next"></span>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script>
+    if($.cookie("COOKIE_MONEY")){
+       $("#mian-money").text($.cookie("COOKIE_MONEY"));
+    }
+</script>
 </html>

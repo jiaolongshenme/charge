@@ -571,6 +571,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     background: url("../img/detialmoney.png") 12px center no-repeat #ffffff;
     background-size: 26px 26px;
 }
+#mian-money {
+    font-size: 30px;
+}
 
 
 /*addmoney*/
@@ -778,7 +781,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 #floatLayer
 {
     position: fixed;
-    width: 80%;
+    width: 72%;
     height: 100px;
     left: 10%;
     top: 40%;
@@ -786,6 +789,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     z-index: 2000000;
     border-radius: 3px;
     overflow: hidden;
+    padding: 4%;
 }
 #phoneon {
     color: #333333;
@@ -860,10 +864,23 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin-top: 20px;
 }
 .btn-money {
+    background-color: #dddddd;
+    color: #999999;
+    border: none;
     top: 210px;
     bottom: auto;
 }
 .select {
     background-color: #26c541;
     color: #ffffff;
+}
+#mainText {
+    line-height: 60px;
+    font-size: 16px;
+}
+#confirm {
+    float: right;
+    margin-right: 12px;
+    font-size: 18px;
+    color: #26c541;
 }

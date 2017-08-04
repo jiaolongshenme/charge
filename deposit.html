@@ -16,20 +16,58 @@
 <div class="con">
     <div class="con-money">
         <ul>
-            <li class="left">充100元</li>
-            <li class="right">充50元</li>
-            <li class="left">充20元</li>
-            <li class="right">充10元</li>
+            <li class="left" value="100">充100元</li>
+            <li class="right" value="50">充50元</li>
+            <li class="left" value="20">充20元</li>
+            <li class="right" value="10">充10元</li>
         </ul>
     </div>
-    <div class="button btn-money">立即充值</div>
+    <button class="button btn-money" id="show" disabled >立即充值</button>
 </div>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
 <script>
     $('.con-money li').click(function() {
         var i = $(this).index();//下标第一种写法
         //var i = $('tit').index(this);//下标第二种写法
         $(this).addClass('select').siblings().removeClass('select');
+        $(".btn-money").removeAttr("disabled");
+        $(".btn-money").css("background-color","#26c541");
+        $(".btn-money").css("color","#fff");
+
+    });
+</script>
+<script>
+    $("document").ready(function()
+    {
+        //点击弹出浮层
+        $("#show").click(function()
+        {
+            var chargeMoney = $(".select").val();
+            if($.cookie("COOKIE_MONEY")){
+                $.cookie("COOKIE_MONEY", parseInt($.cookie("COOKIE_MONEY"))+parseInt(chargeMoney), { path: '/', expires: 10 });
+            }else {
+                $.cookie("COOKIE_MONEY", chargeMoney, { path: '/', expires: 10 });
+            }
+            console.log($.cookie("COOKIE_MONEY"));
+            //清除之前的样式
+            $("#fullScreen,#floatLayer").remove();
+            $("body").append
+            (
+                //占据整个屏幕Div
+                "<div id='fullScreen'></div>"+
+                //浮层区
+                "<div id='floatLayer'>" +
+                "<p id='mainText'>已经成功充值"+chargeMoney+"元!</p>"+
+                "<a id='confirm' href='index.html'>确定</a>"+
+                "</div>"
+            );
+            //隐藏浮层
+            $("#confirm").click(function()
+            {
+                $("#fullScreen,#floatLayer").remove();
+            });
+        });
     });
 </script>
 </body>

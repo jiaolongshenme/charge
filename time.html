@@ -33,12 +33,14 @@
             var date = new Date(0, 0);
             date.setSeconds(sec);
             var h = date.getHours(), m = date.getMinutes(), s = date.getSeconds();
-            var money = parseInt(h*3)+parseInt(m/20);
+            var time = 60*h+m;
                 document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
-            if(m%20){
-                document.getElementById("timer").innerText = (money+1);
-            }else{
-                document.getElementById("timer").innerText = money;
+            if(time >=0 && time <= 20){
+                document.getElementById("timer").innerText = "1";
+            }else if(time/20){
+                document.getElementById("timer").innerText = parseInt(time/20)+1;
+            }else {
+                document.getElementById("timer").innerText = parseInt(time/20);
             }
         }, 1000);
     }

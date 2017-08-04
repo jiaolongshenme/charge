@@ -24,6 +24,7 @@
     <p class="time-bottom">关闭后,请重置密码</p>
 </div>
 <div class="time-button" id="show">确认支付</div>
+<div id="errormsg" style="display: none"></div>
 </body>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
@@ -50,26 +51,31 @@
         //点击弹出浮层
         $("#show").click(function()
         {
-            var money = $("#time1").text();
-            var newMoney = parseInt($.cookie("COOKIE_MONEY"))-parseInt(money);
-            $.cookie("COOKIE_MONEY", newMoney, { path: '/', expires: 10 });
-            //清除之前的样式
-            $("#fullScreen,#floatLayer").remove();
-            $("body").append
-            (
-                //占据整个屏幕Div
-                "<div id='fullScreen'></div>"+
-                //浮层区
-                "<div id='floatLayer'>" +
-                "<p id='mainText' >你已成功支付"+money+"元!钱包余额"+newMoney+"元</p>"+
-                "<a id='confirm' href='index.html'>确认</a>"+
-                "</div>"
-            );
-            //隐藏浮层
-            $("#confirm").click(function()
-            {
+            if($.cookie("COOKIE_MONEY")){
+                var money = $("#time1").text();
+                var newMoney = parseInt($.cookie("COOKIE_MONEY"))-parseInt(money);
+                $.cookie("COOKIE_MONEY", newMoney, { path: '/', expires: 10 });
+                //清除之前的样式
                 $("#fullScreen,#floatLayer").remove();
-            });
+                $("body").append
+                (
+                    //占据整个屏幕Div
+                    "<div id='fullScreen'></div>"+
+                    //浮层区
+                    "<div id='floatLayer'>" +
+                    "<p id='mainText' >你已成功支付"+money+"元!钱包余额"+newMoney+"元</p>"+
+                    "<a id='confirm' href='index.html'>确认</a>"+
+                    "</div>"
+                );
+                //隐藏浮层
+                $("#confirm").click(function()
+                {
+                    $("#fullScreen,#floatLayer").remove();
+                });
+            }else {
+                $("#errormsg").css({"display":"block"});
+                $("#errormsg").html("请先充值！").fadeIn(300).delay(2000).fadeOut(300);
+            }
         });
     });
 </script>
